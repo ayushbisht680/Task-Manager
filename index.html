@@ -26,38 +26,82 @@
   <body style="background-color: #d7f8f6">
     <!-- Adding the modal from bootstrap without JS -->
 
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLabel">Task To Do</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
           </div>
           <div class="modal-body">
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Image url</label>
-              <input type="url" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="http://image/image.jpg">
-
+              <label for="" class="form-label">Image url</label>
+              <input
+                type="url"
+                class="form-control"
+                aria-describedby="emailHelp"
+                placeholder="http://image/image.jpg"
+                id="imgurl"
+              />
             </div>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Task Title</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Web Development">
-
+              <label for="" class="form-label">Task Title</label>
+              <input
+                type="text"
+                class="form-control"
+                aria-describedby="emailHelp"
+                placeholder="Web Development"
+                id="taskTitle"
+              />
             </div>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Task Type</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Practice">
-
+              <label for="" class="form-label">Task Type</label>
+              <input
+                type="text"
+                class="form-control"
+                aria-describedby="emailHelp"
+                placeholder="Practice"
+                id="taskType"
+              />
             </div>
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label ">Task Description</label>
-              <textarea name="" rows="3" id="exampleInputEmail1" class="form-control" placeholder="DOM manipulation"></textarea>
-
+              <label for="" class="form-label">Task Description</label>
+              <textarea
+                name=""
+                rows="3"
+                class="form-control"
+                placeholder="DOM manipulation"
+                id="taskDesc"
+              ></textarea>
             </div>
           </div>
           <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save Task</button>
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              onclick="addNewCard()"
+              data-bs-dismiss="modal"
+            >
+              Save Task
+            </button>
           </div>
         </div>
       </div>
@@ -85,7 +129,12 @@
               </li>
             </ul>
 
-            <button class="btn btn-outline-primary" type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <button
+              class="btn btn-outline-primary"
+              type="submit"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+            >
               <i class="fas fa-plus"></i> Add New
             </button>
           </div>
@@ -110,35 +159,10 @@
         </div>
       </section>
 
-      <section class="task_contaoner row">
-        <div class="col-md-6 col-lg-4 mt-3 mb-3">
-          <div class="card">
-            <div class="card-header d-flex justify-content-end gap-2">
-              <button class="btn btn-outline-info">
-                <i class="fas fa-pencil-alt"></i>
-              </button>
-              <button class="btn btn-outline-danger">
-                <i class="fas fa-trash"></i>
-              </button>
-            </div>
-            <div class="card-body">
-              <img
-                src="https://source.unsplash.com/collection/190727/1600x900"
-                alt="img"
-                class="card-img"
-              />
-              <h5 class="card-title mt-3">Task Title</h5>
-              <p class="card-text">
-                With supporting text below as a natural lead-in to additional
-                content.
-              </p>
-              <span class="badge bg-primary">New</span>
-            </div>
-            <div class="card-footer text-muted">
-              <button class="btn btn-outline-primary">Open Task</button>
-            </div>
-          </div>
-        </div>
+      <!--  Task Card -->
+
+      <section class="task_container row">
+        <!--  insert the card created here-->
       </section>
     </main>
 
@@ -150,5 +174,7 @@
       integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj"
       crossorigin="anonymous"
     ></script>
+
+    <script src="index.js"></script>
   </body>
 </html>
