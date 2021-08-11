@@ -21,8 +21,8 @@ const addNewCard = () => {
       <button class="btn btn-outline-info">
         <i class="fas fa-pencil-alt"></i>
       </button>
-      <button class="btn btn-outline-danger">
-        <i class="fas fa-trash"></i>
+      <button class="btn btn-outline-danger" name=${myCard.id} onclick="deleteCard.apply(this,arguments)">
+        <i class="fas fa-trash" name=${myCard.id}></i>
       </button>
     </div>
     <div class="card-body">
@@ -70,8 +70,8 @@ const LoadExistingCard = () => {
         <button class="btn btn-outline-info">
           <i class="fas fa-pencil-alt"></i>
         </button>
-        <button class="btn btn-outline-danger">
-          <i class="fas fa-trash"></i>
+        <button class="btn btn-outline-danger" name=${myCard.id} onclick="deleteCard.apply(this,arguments)">
+          <i class="fas fa-trash" name=${myCard.id} ></i>
         </button>
       </div>
       <div class="card-body">
@@ -96,3 +96,24 @@ const LoadExistingCard = () => {
   });
   return;
 };
+
+// delete card function
+
+const deleteCard=(event)=>{
+
+   const TargetID=event.target.getAttribute("name");
+   const tagNameClicked=event.target.tagName;
+
+   const removeTask=globalTaskData.filter((task)=>task.id !==TargetID);  
+   globalTaskData=removeTask;
+
+   localStorage.setItem("Tasky", JSON.stringify({ cards: globalTaskData }));
+   
+   if(tagNameClicked==="BUTTON"){
+    return taskContiner.removeChild(event.target.parentNode.parentNode.parentNode);
+   }
+   else{
+    return taskContiner.removeChild(event.target.parentNode.parentNode.parentNode.parentNode);
+   }
+
+}
